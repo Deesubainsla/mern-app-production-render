@@ -75,3 +75,14 @@ export const signin = async(req, res)=>{
         res.status(400).json({message:error.message})
    }
 }
+
+export const getusers = async(req, res)=>{
+    try {
+        const users = await User.find();
+        if(!users) return res.status(400).json({message:"user not found in getusers"});
+
+        res.status(200).json(users);
+    } catch (error) {
+        res.status(400).json({message:error.message})
+    }
+}
