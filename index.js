@@ -29,8 +29,9 @@ const dbconnect = async()=>{
 dbconnect();
 
 app.use(cors())
-app.use(express.json());//important for parse data and provide it to req.body
-app.use(express.urlencoded({extended: false}));
+app.use(express.json());//important for parse data and provide it to req.body kind of body-parser:
+app.use(express.urlencoded({extended: false}));//same as upper one but it is body parser for url sent form means using action and method in form tag:
+//in urlencoded extended is used to define parsing mechanism false for simple data and true for nested and complex data:
 
 
 
